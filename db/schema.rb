@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_10_072650) do
+ActiveRecord::Schema.define(version: 2022_03_10_073337) do
+
+  create_table "dietrecords", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "food", null: false
+    t.integer "calorie", null: false
+    t.integer "protein"
+    t.integer "fat"
+    t.integer "carbo"
+    t.text "text"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
