@@ -15,9 +15,9 @@
   align-items: center;
 }
 
-.furima-icon {
-  width: 10vw;
-  margin-right: 10vw;
+.panda-icon {
+  width: 8vw;
+  margin-right: 8vw;
 }
 
 .search-form {
@@ -93,12 +93,25 @@
 
 .login {
   text-decoration: none;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #0EAC1D;
+  padding: 20px 50px;
   line-height: 32px;
   margin-right: 3vw;
-  color: #333333;
+  color: white;
 }
 
 .sign-up {
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #0EAC1D;
+  padding: 20px 50px;
   text-decoration: none;
-  color: #333333;
+  color: white;
+}
+
+.login:hover,.sign-up:hover{
+  background-color: rgba(14, 172, 29, 0.37);
+  color: #0EAC1D;
 }
