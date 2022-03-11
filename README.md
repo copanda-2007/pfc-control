@@ -1,24 +1,47 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# テーブル設計
 
-Things you may want to cover:
+## users テーブル
 
-* Ruby version
+| Column             | Type   | Options                  |
+| ------------------ | ------ | ------------------------ |
+| nickname           | string | null: false              |
+| email              | string | null: false,unique: true |
+| encrypted_password | string | null: false              |
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :dietrecords
+- has_one :Calculation
 
-* Database creation
+## dietrecordsテーブル
 
-* Database initialization
+| Column  | Type       | Options      |
+| --------| ---------- | ------------ |
+| food    | text       | null: false  |
+| calorie | integer    | null: false  |
+| protein | integer    |              |
+| fat     | integer    |              |
+| carbo   | integer    |              |
+| text    | text       |              |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to :user
 
-* Deployment instructions
+## Calculationテーブル
 
-* ...
+| Column            | Type        | Options      |
+| ----------------- | ----------- | ------------ |
+| weight            | integer     | null: false  |
+| calorie           | integer     | null: false  |
+| protein           | integer     |              |
+| fat               | integer     |              |
+| carbo             | integer     |              |
+| bodyfatpercentage | integer     |              |
+| user              | referrences |              |
+
+### Association
+
+- belongs_to :user
