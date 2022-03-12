@@ -80,15 +80,29 @@
 
 .user-nickname {
   text-decoration: none;
+  border-radius: 5px;
+  background-color: #0EAC1D;
+  padding: 20px 50px;
+  line-height: 32px;
   margin-right: 3vw;
-  color: #333333;
+  color: white;
   font-weight: bold;
 }
 
 
 .logout {
   text-decoration: none;
-  color: #333333;
+  border-radius: 5px;
+  background-color: #0EAC1D;
+  padding: 20px 50px;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: white;
+}
+
+.logout:hover,.user-nickname:hover {
+  background-color: rgba(14, 172, 29, 0.37);
+  color: #0EAC1D;
 }
 
 .login {
