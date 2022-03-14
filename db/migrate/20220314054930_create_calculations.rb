@@ -7,8 +7,8 @@ class CreateCalculations < ActiveRecord::Migration[6.0]
       t.integer     :fat
       t.integer     :carbo
       t.integer     :bodyfatpercentage
-      t.referrences :user
-      
+      t.integer     :leanbodymass
+      t.references  :user
       t.timestamps
     end
   end

@@ -1,0 +1,52 @@
+.calculation-setting {
+  margin-top: 87px;
+}
+
+.calculation-setting-wrapper, .calculation-setting-content {
+  margin: 0 auto;
+  width: 800px;
+  height: 580px;
+  padding: 10px 30px;
+  margin-top: 100px;
+}
+
+.new_calculation {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.left  {
+  margin-top: 10px;
+  background-color: #70aff7;
+  padding: 5px;
+}
+
+.right {
+  margin-top: 10px;
+  background-color: #dbeafa;
+  opacity: 0.8;
+  padding: 5px;
+}
+
+.field.leanBodyMasscalculation {
+  display: none;
+}
+
+.action {
+  margin-top: 30px;
+}
+
+.calculation-setting-btn {
+  border: 1px solid;
+  padding: 5px 15px;
+  -webkit-border-radius: 4px;
+  margin-left: 10px;
+  text-decoration: none;
+  transition: all .5s;
+}
+
+.calculation-setting-btn:hover {
+  color: #f8f9fa;
+  background-color: #0078ff;
+}
