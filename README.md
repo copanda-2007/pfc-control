@@ -13,7 +13,7 @@
 ### Association
 
 - has_many :dietrecords
-- has_one :Calculation
+- has_one :calculation
 
 ## dietrecordsテーブル
 
@@ -30,7 +30,7 @@
 
 - belongs_to :user
 
-## Calculationテーブル
+## Calculationsテーブル
 
 | Column            | Type        | Options      |
 | ----------------- | ----------- | ------------ |

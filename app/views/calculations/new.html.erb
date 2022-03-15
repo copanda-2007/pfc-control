@@ -1,0 +1,82 @@
+<%= render "devise/shared/second-header"%>
+
+<div class="calculation-setting">
+  <div class="calculation-setting-wrapper">
+    <div class="calculation-setting-content">
+      <div class="calculation-setting-text"></div>
+      <h2>
+        1日のカロリー・PFC目標値
+      </h2>
+      <%= form_for @calculation do |f| %>
+        <%= render 'devise/shared/error_messages', model: f.object %>
+        <div class="left">
+          <p>
+            体重を入力してください。
+            <div class="field">
+              <%= f.label :"体重" %>
+              <%= f.number_field :weight, step: '0.1' %>
+              <a>kg</a>
+            </div>
+          </p>
+          <p>
+            体脂肪率を入力してください。
+            <div class="field">
+              <%= f.label :"体脂肪率" %>
+              <%= f.number_field :bodyfatpercentage, step: '0.1' %>
+              <a>%</a>
+            </div>
+          </p>
+          <br/>
+          <br/>
+          入力は「体重」「体脂肪率」だけでOK
+          <br/>
+          右側は自動で計算されます
+        </div>
+        <div class="right">
+          <div class="leanBodyMass">
+            <div class="field leanBodyMasscalculation">
+              <%= f.label :"除脂肪率" %>
+              <%= f.number_field :leanbodymass, step: '0.1' %>
+              <a>kg</a>
+            </div>
+          </div>
+          <p>
+            あなたの１日の目標値
+            <div class="field">
+              <%= f.label :"カロリー" %>
+              <%= f.number_field :calorie, step: '0.1' %>
+              <a>kcal</a>
+            </div>
+          </p>
+          <p>
+            
+            <div class="field">
+              <%= f.label :"タンパク質" %>
+              <%= f.number_field :protein, step: '0.1' %>
+              <a>g</a>
+            </div>
+          </p>
+          <p>
+            
+            <div class="field">
+              <%= f.label :"脂質" %>
+              <%= f.number_field :fat, step: '0.1' %>
+              <a>g</a>
+            </div>
+          </p>
+          <p>
+            
+            <div class="field">
+              <%= f.label :"炭水化物" %>
+              <%= f.number_field :carbo, step: '0.1' %>
+              <a>g</a>
+            </div>
+          </p>
+        </div>
+        <div class="action">
+          <%= f.submit "登録", class: "calculation-setting-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
