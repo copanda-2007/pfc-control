@@ -8,7 +8,7 @@
         1日のカロリー・PFC目標値
       </h2>
       <%= form_for @calculation do |f| %>
-        <%= render 'devise/shared/error_messages', model: f.object %>
+        <%= render 'devise/shared/error_messages', url: user_session_path, model: f.object %>
         <div class="left">
           <p>
             体重を入力してください。
@@ -22,7 +22,7 @@
             体脂肪率を入力してください。
             <div class="field">
               <%= f.label :"体脂肪率" %>
-              <%= f.number_field :bodyfatpercentage, step: '0.1' %>
+              <%= f.number_field :bodyfatpercentage %>
               <a>%</a>
             </div>
           </p>
@@ -80,3 +80,4 @@
     </div>
   </div>
 </div>
+
