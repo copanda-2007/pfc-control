@@ -10,21 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_14_054930) do
-
-  create_table "calculations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "weight", null: false
-    t.integer "calorie", null: false
-    t.integer "protein"
-    t.integer "fat"
-    t.integer "carbo"
-    t.integer "bodyfatpercentage"
-    t.integer "leanbodymass"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_calculations_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2022_03_12_031130) do
 
   create_table "dietrecords", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "food", null: false
