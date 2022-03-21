@@ -18,6 +18,6 @@ class DietrecordsController < ApplicationController
 
   private 
   def dietrecord_params
-    params.require(:dietrecord).permit(:food, :text, :protein, :fat, :carbo).merge(user_id: current_user.id)
+    params.require(:dietrecord).permit(:food, :text, :calorie, :protein, :fat, :carbo).merge(user_id: current_user.id)
   end
 end
