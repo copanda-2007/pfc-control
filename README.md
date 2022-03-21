@@ -17,14 +17,15 @@
 
 ## dietrecordsテーブル
 
-| Column  | Type       | Options      |
-| --------| ---------- | ------------ |
-| food    | text       | null: false  |
-| calorie | integer    | null: false  |
-| protein | integer    |              |
-| fat     | integer    |              |
-| carbo   | integer    |              |
-| text    | text       |              |
+| Column  | Type        | Options           |
+| --------| ----------- | ----------------- |
+| food    | text        | null: false       |
+| calorie | integer     | null: false       |
+| protein | integer     |                   |
+| fat     | integer     |                   |
+| carbo   | integer     |                   |
+| text    | text        |                   |
+| user    | referrences | foreign_key: true |
 
 ### Association
 
@@ -32,16 +33,15 @@
 
 ## Calculationsテーブル
 
-| Column            | Type        | Options      |
-| ----------------- | ----------- | ------------ |
-| weight            | integer     | null: false  |
-| calorie           | integer     | null: false  |
-| protein           | integer     |              |
-| fat               | integer     |              |
-| carbo             | integer     |              |
-| bodyfatpercentage | integer     |              |
-| user              | referrences |              |
-
+| Column            | Type        | Options           |
+| ----------------- | ----------- | ----------------  |
+| weight            | integer     | null: false       |
+| calorie           | integer     | null: false       |
+| protein           | integer     |                   |
+| fat               | integer     |                   |
+| carbo             | integer     |                   |
+| bodyfatpercentage | integer     |                   |
+| user              | referrences | foreign_key: true |
 ### Association
 
 - belongs_to :user
