@@ -57,15 +57,12 @@
 
     <div class='item-contents'>
     <h2 class='title'>自動カロリー計算</h2>
-    <div class="subtitle" >
-      目標値を計算する
-    </div>
-    <ul class='item-lists'>
-
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <div class="subtitle" >
         <li><%= link_to current_user.nickname, new_calculation_path %>さんの目標値を計算する</li>
-      <% end %>
-    </ul>
+      </div>
+    <% end %>
+
 
     <%# トップページの計算結果の値の表示を検討中 %>
       <%# @calculation.each do |calculation| %>
@@ -74,64 +71,47 @@
         <div class='item-img-content'>
     <%# トップページの計算結果の値の表示を検討中 %>
 
-  <%# 商品一覧 %>
-  <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
-    <div class="subtitle" >
-      新規投稿商品
-    </div>
-    <ul class='item-lists'>
 
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-      <li class='list'>
-        <%= link_to "#" do %>
-        <div class='item-img-content'>
-          <%= image_tag "item-sample.png", class: "item-img" %>
+<div class="main">
+  <div class="section">
+    <div class="calorie_chart col-sm-9">
+      <div class="calorie_graph">
+        <canvas>(id="myChart2" width="700" height="100")</canvas>
+        <script>
+          
+          var ctx = document.getElementById('myChart2').getContext('2d');
+          var myChart = new Chart(ctx, {
+              type: 'horizontalBar',
+              data: {
+                  labels: ['test' + gon.calculation, 'test' + gon.today_sum],
+                  datasets: [{
+                      label: 'test',
+                      data: [gon.calculation, gon.today_sum],
+                      backgroundColor: [
+                          'rgba(255, 99, 132, 0.2)',
+                          'rgba(54, 162, 235, 0.2)',
+                      ],
+                      borderColor: [
+                          'rgba(255,99,132,1)',
+                          'rgba(54, 162, 235, 1)',
+                      ],
+                      borderWidth: 1
+                  }]
+              },
+              options: {
+                  scales: {
+                      xAxes: [{
+                          ticks: {
+                              beginAtZero:true,
+                              suggestedMin: 50,
+                              suggestedMax: 100
+                          }
+                      }]
+                  }
+              }
+          });
+        </script>
 
-
-
-        </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= "商品名" %>
-          </h3>
-          <div class='item-price'>
-            <span><%= "販売価格" %>円<br><%= '配送料負担' %></span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </li>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-
-      <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
-      <%# 商品がある場合は表示されないようにしましょう %>
-      <li class='list'>
-        <%= link_to '#' do %>
-        <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            商品を出品してね！
-          </h3>
-          <div class='item-price'>
-            <span>99999999円<br>(税込み)</span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </li>
-      <%# //商品がある場合は表示されないようにしましょう %>
-      <%# //商品がない場合は以下のダミー商品が表示されるようにしましょう %>
-    </ul>
-  </div>
-  <%# /商品一覧 %>
-</div>
 <%= link_to(new_dietrecord_path, class: 'record-btn') do %>
   <span class='record-btn-text'>記録する</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "record-btn-icon" %>
