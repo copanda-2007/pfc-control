@@ -57,15 +57,12 @@
 
     <div class='item-contents'>
     <h2 class='title'>自動カロリー計算</h2>
-    <div class="subtitle" >
-      目標値を計算する
-    </div>
-    <ul class='item-lists'>
-
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <div class="subtitle" >
         <li><%= link_to current_user.nickname, new_calculation_path %>さんの目標値を計算する</li>
-      <% end %>
-    </ul>
+      </div>
+    <% end %>
+
 
     <%# トップページの計算結果の値の表示を検討中 %>
       <%# @calculation.each do |calculation| %>
@@ -113,7 +110,6 @@
                   }
               }
           });
-
         </script>
 
 <%= link_to(new_dietrecord_path, class: 'record-btn') do %>
