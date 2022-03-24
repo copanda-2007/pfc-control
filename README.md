@@ -47,11 +47,11 @@ https://pfc-control.herokuapp.com/
 - Ruby on Rails
 
 # ローカルでの動作方法
-以下のコマンドを順に実行
-% git clone https://github.com/copanda-2007/pfc-control.git
-% cd pfc-control
-% bundle install
-% yarn install
+以下のコマンドを順に実行  
+% git clone https://github.com/copanda-2007/pfc-control.git  
+% cd pfc-control  
+% bundle install  
+% yarn install  
 
 # テーブル設計
 
